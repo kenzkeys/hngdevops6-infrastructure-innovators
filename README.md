@@ -54,4 +54,4 @@ This script is designed to set up a reverse tunneling service on a server using 
 ## Troubleshhoting
 - If the Nginx configuration test fails, the script will remove the faulty configuration file and notify you to try again.
 - Verify that the SSH and Nginx services are running without issues after the script execution
-## Troubleshooting
+
