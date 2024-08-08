@@ -101,22 +101,13 @@ server {
 }
 EOL
 
-# Test the new Nginx configuration for syntax errors
-
-if nginx -t; then
-    # Reload Nginx to apply changes
-    systemctl reload nginx
-    echo "You can now access your service at http://${SUBDOMAIN}.${DOMAIN}"
-else
-    # If there's an error, remove the bad config file and exit
-    sudo rm -f $NGINX_CONFIG
-    echo "An error occured, please try again"
-    exit 1
-fi
+# Reload Nginx to apply changes
+sudo systemctl reload nginx
+echo "You can now access your service at http://${SUBDOMAIN}.${DOMAIN}"
 
 echo "Press [CTRL+C] to exit"
 
-# Keep the process aline
+# Keep the process alive
 while true; do sleep 10; done
 
 EOF

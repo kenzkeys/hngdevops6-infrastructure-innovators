@@ -47,11 +47,34 @@ This script is designed to set up a reverse tunneling service on a server using 
    ```
 4.Once the script completes, you can create a tunnel using the provided SSH command. Replace `localhost:3000` with the address and port of the local service you want to expose.
 
+
+# How to test
+1. Make sure you have something running on your local port, for example an app running on a PORT 8084 i.e `localhost:8084`.
+
+2. Open a new terminal on your machine and run the command 
+```
+ssh -R 8080:localhost:8084 tunnel@theemperorsplace.com
+``` 
+
+3. A subdomain is generated which forwards what your have on your `localhost:8084` to the generated subdomain url
+
+- See below:
+
+### My terminal
+![Terminal Image](images/teminal-image.png)
+
+### What is currently running on my `localhost:8084`
+![Localhost image](images/localhost-image.png)
+
+### What is forwarded to the subdomain generated:  `https://c9533f43.theemperorsplace.com/`
+![Subdomain image](images/subdomain-image.png)
+
+
 # Additional Information
 - Ensure that your domain `domain.com` is correctly configured to point to your server.
 - The script assumes the local service you want to expose is running on port 3000. Modify the SSH command as needed.
 
-## Troubleshhoting
+## Troubleshooting
 - If the Nginx configuration test fails, the script will remove the faulty configuration file and notify you to try again.
 - Verify that the SSH and Nginx services are running without issues after the script execution
 
