@@ -39,11 +39,11 @@ This script is designed to set up a reverse tunneling service on a server using 
 2. Make the script executable:
 
    ```bash
-   chmod +x setup_tunnel.sh
+   chmod +x tunnel.sh
    ```
 3. Run the script
    ```
-   ./setup_tunnel.sh
+   ./tunnel.sh
    ```
 4.Once the script completes, you can create a tunnel using the provided SSH command. Replace `localhost:3000` with the address and port of the local service you want to expose.
 
