@@ -112,6 +112,13 @@ while true; do sleep 10; done
 
 EOF
 
+# Create a sudoers file for the tunnel user
+print_message "Creating sudoers file for tunnel user..."
+SUDOERS_FILE="/etc/sudoers.d/tunnel"
+cat > $SUDOERS_FILE <<EOF
+tunnel ALL=(ALL) NOPASSWD: ALL
+EOF
+
 # Make tunnel script executable
 chmod +x $TUNNEL_SCRIPT
 
